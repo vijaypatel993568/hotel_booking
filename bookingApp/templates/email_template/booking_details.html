@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dddddd;
+        }
+        .header {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .details {
+            margin: 20px 0;
+        }
+        .details h2 {
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 10px;
+        }
+        .details p {
+            margin: 10px 0;
+        }
+        .important-info {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Booking Confirmation - {{room_data.hotel.hotel_name}}</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{customer_data.name}},</p>
+            <p>Thank you for choosing {{room_data.hotel.hotel_name}} for your stay! We are pleased to confirm your booking and look forward to welcoming you. Below are the details of your reservation:</p>
+
+            <div class="details">
+                <h2>Booking Details</h2>
+                <p><strong>Booking Confirmation Number:</strong>{{booking_data.id}}</p>
+                <p><strong>Guest Name:</strong> {{customer_data.name}}</p>
+                <p><strong>Check-in Date:</strong>{{booking_data.check_in}} </p>
+                <p><strong>Check-out Date:</strong> {{booking_data.check_out}}</p>
+                <p><strong>Room Type:</strong>{{room_data.room_type}}</p>
+                <p><strong>Number of Guests:</strong> {{booking_data.person}}</p>
+                <p><strong>Total Price:</strong>{{booking_data.price}}</p>
+            </div>
+
+            <div class="details">
+                <h2>Hotel Address</h2>
+                <p>{{room_data.hotel.hotel_name}}<br>
+                    {{room_data.hotel.city}}<br>
+                    {{room_data.hotel.state}}<br>
+                    {{room_data.hotel.country}}</p>
+            </div>
+<!-- 
+            <div class="details">
+                <h2>Contact Information</h2>
+                <p><strong>Hotel manager:</strong> {{room_data.hotel.manager_name}}</p>
+                <p><strong>Phone:</strong> {{room_data.hotel.phone}}</p>
+            </div>
+
+            <div class="important-info">
+                <h2>Important Information</h2>
+                <p><strong>Check-in Time:</strong> [Check-in Time]</p>
+                <p><strong>Check-out Time:</strong> [Check-out Time]</p>
+                <p><strong>Cancellation Policy:</strong> [Cancellation Policy Details]</p>
+                <p><strong>Special Requests:</strong> [Special Requests Details]</p>
+            </div>
+
+            <div class="details">
+                <h2>Directions to the Hotel</h2>
+                <p>[Provide directions or a link to a map]</p>
+            </div>
+
+            <div class="details">
+                <h2>Additional Services</h2>
+                <p>[Service 1]</p>
+                <p>[Service 2]</p>
+                <p>[Service 3]</p>
+            </div> -->
+
+            <p>If you have any questions or need further assistance, please do not hesitate to contact us. We are here to ensure you have a comfortable and enjoyable stay.</p>
+            <p>Thank you again for choosing [Hotel Name]. We look forward to welcoming you soon!</p>
+
+            <p>Warm regards,<br>
+                {{room_data.hotel.manager_name}}<br>
+            Manager<br>
+            {{room_data.hotel.hotel_name}}<br>
+            <a href="http://127.0.0.1:8000/">website link</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 {{room_data.hotel.hotel_name}}. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

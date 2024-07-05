@@ -1,0 +1,54 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}
+<title>login page</title>
+{%endblock title%}
+
+{%block body%}
+<div class="container-fluid w-100 mt-4">
+    <div class="w-75  m-auto">
+        <h5 class="text-center text-light bg-dark p-2"><span class="text-success">Forget Password</span> To Your Account</h5>
+        {% for m in messages %}
+        {% if m.tags == 'success'%}
+        <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+            {{m}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elif m.tags == 'error'%}
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+            {{m}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {%endif%}
+        {% endfor%}
+        <form action="/forget/" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" required placeholder="Username" class="form-control py-4">
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="Enter Your New Password" class="form-control py-4">
+            </div>
+            <div class="mb-3">
+            <div class="mb-3">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" required placeholder="Enter Your Confirm Password" class="form-control py-4">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark w-100">Submit</button>
+            </div>
+        </form>
+        <div class="mb-3 d-flex justify-content-between">
+            <a class="text-success" href="/login/">Go to Login Page</a>
+            <a class="text-success" href="/signup/">New User?Create a Free Account</a>
+        </div>
+    </div>
+</div>
+
+{%endblock body%}

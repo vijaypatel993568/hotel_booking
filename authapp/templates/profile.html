@@ -1,0 +1,72 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}
+<title>Profile page</title>
+{%endblock title%}
+{%block body%}
+
+{%if messages%}
+{%for message in messages%}
+<p class="text-success text-center">{{message}}</p>
+{%endfor%}
+{%endif%}
+
+
+<div class="container-fluid my-3">
+
+    <div class="row">
+        <div class="col-md-6">
+            {% if data.profile_pic %}
+            <img src="{{data.profile_pic.url}}" height="500px" width="100%" alt="">
+            {% else %}
+            <img src="/static/img/noimage.png" height="500px" width="100%" alt="">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h5 class="bg-dark text-center p-1 text-light">Buyer Profile</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <td>{{data.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>UserName</th>
+                        <td>{{data.username}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{data.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{data.phone}}</td>
+                    </tr>
+                    <tr>
+                        <th>Address Line 1</th>
+                        <td>{{data.address1}}</td>
+                    </tr>
+                    <tr>
+                        <th>Address Line 2</th>
+                        <td>{{data.address2}}</td>
+                    </tr>
+                    
+                   
+                    <tr>
+                        <th>City</th>
+                        <td>{{data.city}}</td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>{{data.state}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><a href="/authapp/update-profile/" class="btn btn-dark w-100">Update Profile</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+{%endblock body%}

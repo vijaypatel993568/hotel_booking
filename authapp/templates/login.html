@@ -1,0 +1,51 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}
+<title>login page</title>
+{%endblock title%}
+
+{%block body%}
+<div class="container-fluid w-100">
+    <div class="w-75  m-auto">
+        <h5 class="text-center text-light bg-dark mt-4 p-2"><span class="text-success">Login</span> To Your Account</h5>
+        {% for m in messages %}
+        {% if m.tags == 'success'%}
+        <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+            {{m}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elif m.tags == 'error'%}
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+            {{m}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {%endif%}
+        {% endfor%}
+        <form action="/authapp/login/" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" required placeholder="Username" class="form-control py-4">
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="Password" class="form-control py-4">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark w-100">Login</button>
+            </div>
+
+    </div>
+    </form>
+    <div class="mb-3 d-flex justify-content-between">
+        <a class="text-success" href="/forget/">Forget Password</a>
+        <a class="text-success" href="/signup/">New User?Create a Free Account</a>
+    </div>
+</div>
+</div>
+
+{%endblock body%}

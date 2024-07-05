@@ -1,0 +1,87 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block body%}
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-5">
+                <div class="contact__widget">
+                    <div class="contact__widget__item">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>(123) 456-78-910</li>
+                            <li>Info.colorlib@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="contact__widget__item">
+                        <h4>Address</h4>
+                        <p>96 Ernser Vista Suite 437, NY, <br />United Stated</p>
+                    </div>
+                    <div class="contact__widget__time">
+                        <h4>Opentime</h4>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="contact__widget__time__item">
+                                    <ul>
+                                        <li>Monday - Friday</li>
+                                        <li><span>8 am - 9 pm</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="contact__widget__time__item">
+                                    <ul>
+                                        <li>Saturday - Sunday</li>
+                                        <li><span>8 am - 9 pm</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1 col-md-6 col-sm-7">
+                <div class="contact__form">
+                    <h2>Let us know who you are</h2>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <label for="phone">Name</label>
+                        <input type="text" placeholder="Your Name" name="name" value="{{customer_data.name}}">
+                        <label for="phone">Email</label>
+                        <input type="email" placeholder="Email" name="email" value="{{customer_data.email}}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="check-in">check-in</label>
+                                <input type="date" required name="check-in">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="check-out">check-out</label>
+                                <input type="date" required name="check-out">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="phone">Phone</label>
+                                <input type="text" name="phone" value="{{customer_data.phone}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="person">Person</label>
+                                <select class="form-control" name="person">
+                                    <option value="2 Adult,1 Children">2 Adult,1 Children</option>
+                                    <option value="2 Adult">2 Adult</option>
+                                    <option value="1 Adult">1 Adult</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <button type="submit">Book Now </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+{% endblock body %}
