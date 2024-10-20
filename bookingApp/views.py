@@ -10,7 +10,8 @@ from django.utils.html import strip_tags
 
 # Create your views here.
 def home(request):
-    return render(request,"index.html")
+    latest_room=Room.objects.all()[0:5]
+    return render(request,"index.html",{'latest_room':latest_room})
 
 
 def room(request):

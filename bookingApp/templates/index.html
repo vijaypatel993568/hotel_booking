@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block title %}
-    <title>Hiroto | Template</title>
+    <title>Hotel Jogini Heights</title>
     {% endblock title %}
     <!-- Css Styles -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -46,7 +46,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__logo">
-            <a href="./index.html"><img src="/static/img/logo.png" alt=""></a>
+            <a href="/"><img src="/static/img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__btn__widget">
@@ -54,8 +54,8 @@
         </div>
         <div class="offcanvas__widget">
             <ul>
-                <li><span class="icon_pin_alt"></span> 96 Ernser Vista Suite 437, NY, US</li>
-                <li><span class="icon_phone"></span> (123) 456-78-910</li>
+                <li><span class="icon_pin_alt"></span> Jogini Waterfalll Road,Leh-Manali Highway</li>
+                <li><span class="icon_phone"></span> +91-8091460019/8/7/6</li>
             </ul>
         </div>
         <div class="offcanvas__language">
@@ -86,13 +86,13 @@
         <div class="header__top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <ul class="header__top__widget">
-                            <li><span class="icon_pin_alt"></span> 96 Ernser Vista Suite 437, NY, US</li>
-                            <li><span class="icon_phone"></span> (123) 456-78-910</li>
+                            <li><span class="icon_pin_alt"></span>Jogini Waterfalll Road,Leh-Manali Highway, Bahang, Manali, H.P</li>
+                            <li><span class="icon_phone"></span>+91-8091460019/8/7/6</li>
                         </ul>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-4">
                         <div class="header__top__right">
                             <div class="header__top__auth">
                                 <ul>
@@ -105,7 +105,7 @@
                                     {%endif%}
                                 </ul>
                             </div>
-                            <div class="header__top__language">
+                            <!-- <div class="header__top__language">
                                 <img src="/static/img/lan.png" alt="">
                                 <span>English</span>
                                 <i class="fa fa-angle-down"></i>
@@ -113,36 +113,39 @@
                                     <li>English</li>
                                     <li>Bangla</li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header__nav__option">
+        <div class="header__nav__option p-1">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2">
-                        <div class="header__logo">
-                            <a href="./index.html"><img src="/static/img/logo.png" alt=""></a>
+                    <div class="col-lg-3 d-flex flex-row">
+                        <div class="header__logo " style="height: 70px;width: 70px;">
+                            <a href="/"><img src="/static/img/logoS.png" alt=""></a>
+                        </div>
+                        <div class="pt-4 m-auto">
+                            <h4 class="text-light">Hotel Jogini Heights</h4>
                         </div>
                     </div>
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                         <div class="header__nav">
                             <nav class="header__menu">
                                 <ul class="menu__class">
                                     <li class="active"><a href="/">Home</a></li>
                                     <li><a href="/room/">Rooms</a></li>
                                     <li><a href="/about/">About Us</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <!-- <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./about.html">About Us</a></li>
-                                            <li><a href="./room-details.html">Room Details</a></li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="/room-details">Room Details</a></li>
                                             <li><a href="./blog-details.html">Blog Details</a></li>
                                         </ul>
                                     </li>
-                
-                                    <li><a href="/contact">Contact</a></li>
+                 -->
+                                    <li><a href="/contact" id="contact">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="header__nav__widget">
@@ -160,12 +163,13 @@
     <!-- Header Section End -->
 {%block body%}
     <!-- Hero Section Begin -->
-    <section class="hero spad set-bg" style="background-image: url('{% static "img/hero.jpg" %}')">
-        <div class="container">
+    <!-- <section class="hero spad set-bg" style="background-image: url('{% static "img/jogini_img/hero_bg3.jpeg" %}')"> -->
+    <section class="hero spad set-bg" data-setbg="static/img/jogini_img/hero_bg3.jpeg">
+    <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="hero__text">
-                        <h5>WELCOME HIROTO</h5>
+                    <div class="hero__text text-secondery">
+                        <h5 class="text-warning">WELCOME Hotel Jogini Heights</h5>
                         <h2>Experience the greatest for you holidays.</h2>
                     </div>
                     <form action="/room/" class="filter__form" method="post">
@@ -220,7 +224,7 @@
                     <div class="home__about__text">
                         <div class="section-title">
                             <h5>ABOUT US</h5>
-                            <h2>Welcome Hiroto Hotel In Street L’Abreuvoir</h2>
+                            <h2>Welcome Hotel Jogini Heights In Manali</h2>
                         </div>
                         <p class="first-para">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
                             fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
@@ -232,6 +236,7 @@
                 <div class="col-lg-6">
                     <div class="home__about__pic">
                         <img src="/static/img/home-about/home-about.png" alt="">
+                        <!-- <img class="h-50 w-25" src="/static/img/jogini_img/vertical_img.jpeg" alt=""> -->
                     </div>
                 </div>
             </div>
@@ -308,45 +313,19 @@
                 </div>
             </div>
         </div>
-        
         <div class="container-fluid">
             <div class="row">
+                {% for room in latest_room%}
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" style="background-image: url('{% static "img/home-room/hr-1.jpg" %}');">
+                    <div class="home__room__item set-bg" data-setbg="{{room.pic1.url}}">
                         <div class="home__room__title">
-                            <h4>Deluxe Room</h4>
-                            <h2><sup>$</sup>55<span>/day</span></h2>
-                        </div>
-                        <a href="#">Booking Now </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" style="background-image: url('{% static "img/home-room/hr-2.jpg" %}');" >
-                        <div class="home__room__title">
-                            <h4>Deluxe Room</h4>
-                            <h2><sup>$</sup>85<span>/day</span></h2>
+                            <h4>{{room.room_type}}</h4>
+                            <h2><sup>&#8377</sup>{{room.price}}<span>/day</span></h2>
                         </div>
                         <a href="#">Booking Now</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" style="background-image: url('{% static "img/home-room/hr-3.jpg" %}');">
-                        <div class="home__room__title">
-                            <h4>Deluxe Room</h4>
-                            <h2><sup>$</sup>94<span>/day</span></h2>
-                        </div>
-                        <a href="#">Booking Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" style="background-image: url('{% static "img/home-room/hr-4.jpg" %}');">
-                        <div class="home__room__title">
-                            <h4>Deluxe Room</h4>
-                            <h2><sup>$</sup>71<span>/day</span></h2>
-                        </div>
-                        <a href="#">Booking Now</a>
-                    </div>
-                </div>
+                {%endfor%}
             </div>
         </div>
         <div class="container">
@@ -365,8 +344,8 @@
     <!-- Home Room Section End -->
 {% endblock body%}
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" style="background-image: url('{% static "img/footer-bg.jpg" %}');"" >
-        <div class="container">
+    <footer class="footer set-bg" data-setbg="/static/img/footer-bg.jpg">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="logo__carousel owl-carousel">
@@ -388,19 +367,29 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container">
             <div class="footer__content">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer__about">
-                            <div class="footer__logo">
+                            <!-- <div class="footer__logo">
                                 <a href="#"><img src="/static/img/logo.png" alt=""></a>
+                            </div> -->
+
+                            <div class="footer__logo d-flex row">
+                                <div class="header__logo " style="height: 70px;width: 70px;">
+                                    <a href="/b/index.html"><img src="/static/img/logoS.png" alt=""></a>
+                                </div>
+                                <div class="p-4 m-1">
+                                    <h3 class="text-light">Hotel Jogini Heights</h3>
+                                </div>
                             </div>
-                            <h4>(123) 456-78-91096</h4>
+
+                            <h4>+91-8091460019/8/7/6</h4>
                             <ul>
-                                <li>Ernser Vista Suite 437, NY</li>
-                                <li>Info.colorlib@gmail.com</li>
+                                <li>Jogini Waterfalll Road,Leh-Manali Highway, Bahang, Manali, H.P</li>
+                                <li>chandraashospotality@gmail.com</li>
                             </ul>
                             <div class="footer__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -460,7 +449,7 @@
     <script src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script src="{% static 'js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+    <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/costum.js' %}"></script>
     
 </body>
