@@ -10,8 +10,6 @@ __pycache__/
 *.pot
 *.pyc
 __pycache__/
-db.sqlite3
-media
 
 # If you're using a virtualenv:
 venv/
