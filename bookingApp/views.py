@@ -19,7 +19,10 @@ def room(request):
         city=request.POST.get("city")
         # hotel_details=Hotel.objects.filter(city=city).id
         # print("hotel details",hotel_details)
-        all_rooms=Room.objects.filter(hotel__city=city)
+        all_rooms=Room.objects.filter(hotel__city__iexact=city)
+        print("alll room",all_rooms)
+        print('city',city)
+
         return render(request,"rooms.html",{"all_rooms":all_rooms})
     else:
         all_rooms=Room.objects.all()[:8]
